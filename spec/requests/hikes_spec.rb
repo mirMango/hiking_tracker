@@ -15,4 +15,12 @@ RSpec.describe "Hikes", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe "POST /hikes" do
+    it "creates a hike" do
+      sign_in user
+      post hikes_path, params: { hike: { name: "Bear Creek", distance: 5.0, description: "A great hike" } }
+      expect(response).to redirect_to(hike_path(Hike.last))
+    end
+  end
 end
