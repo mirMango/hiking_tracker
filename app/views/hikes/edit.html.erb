@@ -1,0 +1,12 @@
+<% content_for :title, "Editing hike" %>
+
+<h1>Editing hike</h1>
+
+<%= render "form", hike: @hike %>
+
+<br>
+
+<div>
+  <%= link_to "Show this hike", @hike %> |
+  <%= link_to "Back to hikes", hikes_path %>
+</div>

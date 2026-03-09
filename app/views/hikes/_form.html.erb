@@ -1,0 +1,32 @@
+<%= form_with(model: hike) do |form| %>
+  <% if hike.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(hike.errors.count, "error") %> prohibited this hike from being saved:</h2>
+
+      <ul>
+        <% hike.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :distance, style: "display: block" %>
+    <%= form.text_field :distance %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.textarea :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

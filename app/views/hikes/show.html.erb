@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+<%= render @hike %>
+<div>
+  <% if current_user == @hike.user %>
+    <%= link_to "Edit this hike", edit_hike_path(@hike) %> |
+    <%= button_to "Destroy this hike", @hike, method: :delete %>
+  <% end %>
+  <%= link_to "Back to hikes", hikes_path %>
+</div>
