@@ -1,5 +1,5 @@
 class HikesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :set_hike, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
@@ -10,7 +10,7 @@ class HikesController < ApplicationController
   end
 
   # GET /hikes/1 or /hikes/1.json
-  def show
+  def show1
   end
 
   # GET /hikes/new
