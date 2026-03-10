@@ -2,7 +2,7 @@ production:
   primary:
     adapter: postgresql
     encoding: unicode
-    url: <%= ENV['postgresql://hiking_tracker_db_user:NkrOM7W7TsL6DULOwVpg877xEgyCgROK@dpg-d6nfsgn5gffc73bjb3f0-a/hiking_tracker_db'] %>
+    url: <%= ENV['DATABASE_URL'] %>
   cache:
     <<: *default
     database: storage/production_cache.sqlite3
@@ -15,4 +15,3 @@ production:
     <<: *default
     database: storage/production_cable.sqlite3
     migrations_paths: db/cable_migrate
-
