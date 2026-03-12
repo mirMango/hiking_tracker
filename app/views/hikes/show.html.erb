@@ -1,5 +1,8 @@
 <p style="color: green"><%= notice %></p>
 <%= render @hike %>
+<% if @hike.photo.attached? %>
+  <%= image_tag @hike.photo, style: "max-width: 400px" %>
+<% end %>
 <div>
   <% if current_user == @hike.user %>
     <%= link_to "Edit this hike", edit_hike_path(@hike) %> |

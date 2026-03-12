@@ -68,7 +68,7 @@ class HikesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hike_params
-      params.expect(hike: [ :name, :distance, :description ])
+      params.expect(hike: [ :name, :distance, :description, :photo])
     end
 
     def authorize_user!
