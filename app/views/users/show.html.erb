@@ -1,0 +1,13 @@
+<div id="<%= dom_id @user %>">
+  <div>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </div>
+
+  <div>
+    <strong>Hikes:</strong>
+    <% @user.hikes.each do |hike| %>
+      <p><%= link_to hike.name, hike_path(hike) %></p>
+    <% end %>
+  </div>
+</div>
